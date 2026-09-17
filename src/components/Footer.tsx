@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Linkedin, Instagram, Youtube, Mail, ArrowRight } from 'lucide-react';
+import logo from '../assets/LOgo.png';
 
 
 export function Footer() {
@@ -45,7 +46,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Link to="/" className="inline-block mb-6">
               <img 
-                src={'/src/assets/LOgo.png'} 
+                src={logo}
                 alt="Nipix Technology" 
                 className="h-12 w-auto"
               />

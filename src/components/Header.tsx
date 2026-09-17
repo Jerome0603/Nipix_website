@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Laptop, Menu, X, GraduationCap, Users, Award, ChevronDown} from 'lucide-react';
+import logo from '../assets/LOgo.png';
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -69,7 +70,7 @@ export function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center z-10">
             <img 
-              src={'/src/assets/LOgo.png'} 
+              src={logo}
               alt="Nipix Technology" 
               className="h-14 w-auto "
             />

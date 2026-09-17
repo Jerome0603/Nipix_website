@@ -19,6 +19,7 @@ import { Link } from 'react-router-dom';
 import { Breadcrumb } from '../components/ComponentLibrary';
 import { motion } from 'framer-motion';
 import { supabase } from '../lib/supabase';
+import contactPageImage from '../assets/contactpage.png';
 
 export function ContactPage() {
   const initialFormData = {
@@ -181,7 +182,7 @@ export function ContactPage() {
         {/* Background Illustration */}
         <div className="absolute right-0 top-0 bottom-0 w-full opacity-100 hidden lg:block">
           <ImageWithFallback
-            src="../src/assets/contactpage.png"
+            src={contactPageImage}
             alt="Contact Support"
             className="w-full h-full object-cover"
           />

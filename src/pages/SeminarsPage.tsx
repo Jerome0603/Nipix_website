@@ -16,6 +16,7 @@ import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { SeminarsPageSkeleton } from '../components/SeminarPageSkeleton';
 import { supabase } from '../lib/supabase';
 import { useEffect } from 'react';
+import seminarsPageImage from '../assets/seminarpage.png';
 
 function AnimatedStatNumber({
   value,
@@ -195,7 +196,7 @@ export function SeminarsPage() {
         {/* Background Illustration */}
         <div className="absolute right-0 top-0 bottom-0 w-full opacity-100 hidden lg:block">
           <ImageWithFallback
-            src="../src/assets/seminarpage.png"
+            src={seminarsPageImage}
             alt="Seminar"
             className="w-full h-full object-cover"
           />

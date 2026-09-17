@@ -22,6 +22,8 @@ import {
   Gift
 } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+import coursePageImage from '../assets/coursepage.png';
+import coursesImage from '../assets/courses.png';
 
 export function CoursesPage() {
   const [selectedTab, setSelectedTab] = useState<'paid' | 'combo' | 'domain' | 'free'>('paid');
@@ -97,7 +99,7 @@ export function CoursesPage() {
         {/* Background Illustration */}
             <div className="absolute right-0 top-0 bottom-0 w-full opacity-100 hidden lg:block">
               <ImageWithFallback
-                src="../src/assets/coursepage.png"
+                src={coursePageImage}
                 alt="About Education"
                 className="w-full h-full object-cover"
               />
@@ -120,7 +122,7 @@ export function CoursesPage() {
             <div className="hidden lg:block animate-slide-left">
               <div className="relative">
                 <ImageWithFallback
-                  src="../src/assets/courses.png"
+                  src={coursesImage}
                   alt="Online Learning"
                   className="w-full h-auto rounded-3xl shadow-2xl opacity-90"
                   style={{ maxHeight: '340px', objectFit: 'cover' }}

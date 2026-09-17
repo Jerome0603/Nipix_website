@@ -20,6 +20,8 @@ import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import { TeamCarousel } from "../components/ui/team-carousel"
+import aboutPageImage from '../assets/aboutpage.png';
+import introVideo from '../assets/nipix technology intro.mp4';
 
 
 type AboutTab = "vision" | "mission";
@@ -236,7 +238,7 @@ export function AboutPage() {
         {/* Background Illustration */}
         <div className="absolute inset-0 w-full h-full opacity-100">
           <ImageWithFallback
-            src={'/src/assets/aboutpage.png'} 
+            src={aboutPageImage}
             alt="About Education"
             className="w-full h-full object-cover object-[72%_center] sm:object-center"
           />
@@ -412,7 +414,7 @@ export function AboutPage() {
                 <div className="bg-gradient-to-br from-[#007DFF]/20 to-[#065FCC]/20 rounded-2xl p-6 group">
                   <video
                     ref={videoRef}
-                    src="../src/assets/nipix technology intro.mp4"  // ✅ replace with actual video path
+                    src={introVideo}
                     muted
                     loop
                     playsInline

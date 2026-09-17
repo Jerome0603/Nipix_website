@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, AlertCircle, Award, Search, ArrowRight, ShieldCheck, Download, Share2 } from 'lucide-react';
 import {supabase} from '../lib/supabase';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+import certificateLogo from '../assets/only logo.png';
 
 // Mock Certificate Data
 type Certificate = {
@@ -228,7 +229,7 @@ type Certificate = {
 
                     <div className="flex flex-col items-center justify-center p-8 bg-white/50 rounded-3xl border border-[#D9EBFF] relative group">
                       <ImageWithFallback
-                        src={'/src/assets/only logo.png'}
+                        src={certificateLogo}
                         alt="Logo"
                         className="w-48 h-48 object-contain group-hover:scale-105 transition-transform"
                       />
