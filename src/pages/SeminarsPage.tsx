@@ -13,7 +13,7 @@ import {
   CheckCircle
 } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import { SeminarsPageSkeleton } from '../components/seminarpageskeleton';
+import { SeminarsPageSkeleton } from '../components/SeminarPageSkeleton';
 import { supabase } from '../lib/supabase';
 import { useEffect } from 'react';
 
