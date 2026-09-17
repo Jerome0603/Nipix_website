@@ -21,7 +21,6 @@ import { useEffect, useRef, useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import { TeamCarousel } from "../components/ui/team-carousel"
 import aboutPageImage from '../assets/aboutpage.png';
-import introVideo from '../assets/nipix technology intro.mp4';
 
 
 type AboutTab = "vision" | "mission";
@@ -75,7 +74,6 @@ export function AboutPage() {
   const [isVisible, setIsVisible] = useState(false);
   const [shouldAnimateStats, setShouldAnimateStats] = useState(false);
 
-  const videoRef = useRef<HTMLVideoElement | null>(null);
   const statsRef = useRef<HTMLElement | null>(null);
 
   useEffect((): (() => void) => {
@@ -87,9 +85,6 @@ export function AboutPage() {
 
         if (entry.isIntersecting) {
           setIsVisible(true);
-          videoRef.current?.play();
-        } else {
-          videoRef.current?.pause();
         }
       },
       { threshold: 0.4 }
@@ -412,12 +407,9 @@ export function AboutPage() {
             >
               <div id="about-video" className="relative">
                 <div className="bg-gradient-to-br from-[#007DFF]/20 to-[#065FCC]/20 rounded-2xl p-6 group">
-                  <video
-                    ref={videoRef}
-                    src={introVideo}
-                    muted
-                    loop
-                    playsInline
+                  <ImageWithFallback
+                    src={aboutPageImage}
+                    alt="Nipix Technology introduction"
                     className="w-full h-80 object-cover rounded-xl shadow-lg"
                   />
                 </div>

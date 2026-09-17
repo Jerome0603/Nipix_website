@@ -34,10 +34,6 @@ import {
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { motion, useInView } from 'framer-motion';
 import heroStudentsImage from '../assets/02.jpg';
-import sophiyaVideo from '../assets/sophiya.mp4';
-import karthickAndDayanathiVideo from '../assets/Karthick and dayanathi.mp4';
-import jenewerVideo from '../assets/jenewer.mp4';
-import dharaniVideo from '../assets/dharani.mp4';
 
 function AnimatedStatNumber({
   value,
@@ -144,7 +140,6 @@ export function HomePage() {
   };
 
   const [currentStory, setCurrentStory] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
 
   const successStories = [
     {
@@ -163,7 +158,6 @@ export function HomePage() {
       location: "Bangalore",
       testimonial: `I joined the app development course with no prior knowledge and gradually understood the core concepts step by step. My trainer guided me well, addressing my difficulties and making each topic clear. Through the course, I also contributed to an internship in the content writing team, where I learned to apply concepts, use AI tools, and deliver reports on time. This journey helped me grow from basics to deeper understanding, and I'm grateful for the structured learning and support. Thanks for NIPIX Technology!`,
       videoThumbnail: "https://hlpeopzlejlbvsvkkaiq.supabase.co/storage/v1/object/public/public-asset/sophiya_thumbnail.png",
-      videoUrl: sophiyaVideo,
       skills: ["Dart Programming", "Flutter Framework", "Firebase"],
       projects: ["E commerce App", "To do App", "Chat App"],
       timeline: "Applied → 3 month course training → 6 months internship"
@@ -185,7 +179,6 @@ export function HomePage() {
       location: "Gurgaon",
       testimonial: `The Value Added Course was an excellent learning experience — both interactive and practical. With the guidance of our trainers, my team and I developed a Car Parking System project and proudly won first prize. The unique token reward system kept us motivated throughout, and the sessions were engaging, well-structured, and easy to follow. It was one of the best learning experiences we've had, and we look forward to more such courses. Thanks for NIPIX Technology!`,
       videoThumbnail: "https://hlpeopzlejlbvsvkkaiq.supabase.co/storage/v1/object/public/public-asset/karthick_thumbnail.png",
-      videoUrl: karthickAndDayanathiVideo,
       skills: ["Embedded System", "Arduino Programming", "IoT"],
       projects: ["Smart Car Parking System"],
       timeline: "Applied → 5 Days value added course → Final project"
@@ -207,7 +200,6 @@ export function HomePage() {
       location: "Bangalore",
       testimonial: `From the very first day, learning with Nipix Technology was an extraordinary experience. The sessions were interactive, activity-based, and full of fun, ensuring that no one ever felt left out. Each day introduced us to new concepts and domains, which I initially thought might be dry, but they turned out to be highly engaging and practical. The hands-on approach made the learning journey both exciting and rewarding. Thanks for NIPIX Technology!`,
       videoThumbnail: "https://hlpeopzlejlbvsvkkaiq.supabase.co/storage/v1/object/public/public-asset/jenewer_thumbnail.png",
-      videoUrl: jenewerVideo,
       skills: ["Embedded System", "Arduino Programming", "IoT"],
       projects: ["Smart Alert System"],
       timeline: "Applied → 5 Days value added course → Final project"
@@ -229,7 +221,6 @@ export function HomePage() {
       location: "Bangalore",
       testimonial: `This is not just about receiving a certificate — it has been an experience where I truly felt comfortable and supported throughout my learning journey. The environment made me feel at ease, and I could focus on growing step by step. If you decide to join, you will find this platform to be more than just a course; it is a space to share your thoughts, gain knowledge, and build your skills with confidence. It has been a wonderful opportunity for me, and I am thankful for the guidance and support provided. Thanks for NIPIX Technology!`,
       videoThumbnail: "https://hlpeopzlejlbvsvkkaiq.supabase.co/storage/v1/object/public/public-asset/dharani_thumbnail.png",
-      videoUrl: dharaniVideo,
       skills: ["Python", "TensorFlow", "Data Science", "Deep Learning"],
       projects: ["Prompt to image Generation"],
       timeline: "Applied → 1 month training → 6 months internship"
@@ -238,7 +229,6 @@ export function HomePage() {
 
   const handleStoryChange = (index: number) => {
     setCurrentStory(index);
-    setIsPlaying(false);
   };
 
   const currentStudent = successStories[currentStory];
@@ -1052,33 +1042,15 @@ export function HomePage() {
 
               {/* Right Side - Video Player & Timeline */}
               <div className="space-y-6 flex flex-col">
-                {/* Video Player */}
+                {/* Testimonial thumbnail */}
                 <div className="flex items-center justify-center flex-1">
-                  {!isPlaying ? (
-                    <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl group cursor-pointer"
-                      onClick={() => setIsPlaying(true)}>
-                      <img
-                        src={currentStudent?.videoThumbnail}
-                        alt="Video thumbnail"
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-all flex items-center justify-center">
-                        <div className="bg-[#007DFF] rounded-full p-4 group-hover:scale-110 transition-transform">
-                          <Play className="text-white" size={32} fill="white" />
-                        </div>
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black">
-                      <video
-                        src={currentStudent?.videoUrl}
-                        className="w-full h-full object-cover"
-                        controls
-                        autoPlay
-                        onEnded={() => setIsPlaying(false)}
-                      />
-                    </div>
-                  )}
+                  <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl">
+                    <img
+                      src={currentStudent?.videoThumbnail}
+                      alt={`${currentStudent?.name ?? 'Student'} testimonial`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
 
                 {/* Timeline */}
