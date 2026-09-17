@@ -17,7 +17,7 @@ import {
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { Breadcrumb } from '../components/ComponentLibrary';
 import { supabase } from '../lib/supabase';
-import { SeminarsPageSkeleton } from '../components/seminarpageskeleton';
+import { SeminarsPageSkeleton } from '../components/SeminarPageSkeleton';
 
 function AnimatedStatNumber({
   value,
